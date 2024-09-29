@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Projet de Sélecteur de Difficulté
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description 📋
 
-## Available Scripts
+Ce projet est une application React simple permettant aux utilisateurs de sélectionner un niveau de difficulté. Elle propose une interface conviviale où l'utilisateur peut choisir une difficulté dans une liste, et voir la difficulté sélectionnée mise à jour en temps réel. Ce projet est parfait pour illustrer la gestion d'état dans une application React, ainsi que la manière dont les composants peuvent interagir entre eux.
 
-In the project directory, you can run:
+## Fonctionnalités 🌟
 
-### `npm start`
+- **Sélection de la difficulté** : Choisissez parmi plusieurs niveaux de difficulté prédéfinis.
+- **Mise à jour dynamique** : Affichage de la difficulté actuellement sélectionnée.
+- **Interface réactive** : Les composants changent d'apparence en fonction des actions de l'utilisateur (survol et sélection).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Détails des Composants 🧩
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1. `App.jsx` 🏠
+Le composant principal qui gère l'ensemble de l'application.
+- **`useState`** : Utilisé pour gérer l'état de la difficulté sélectionnée.
+- **`updateDifficulty`** : Fonction permettant de mettre à jour la difficulté sélectionnée.
+- Contient :
+  - **`<MenuList>`** : Pour choisir un niveau de difficulté.
+  - **`<DisplayDifficulty>`** : Pour afficher la difficulté sélectionnée.
 
-### `npm test`
+### 2. `MenuList.jsx` 📜
+Ce composant affiche une liste des niveaux de difficulté disponibles.
+- Utilise le composant **`MenuListItem`** pour chaque niveau de difficulté.
+- Reçoit la difficulté actuellement sélectionnée ainsi que la fonction de mise à jour comme props.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 3. `MenuListItem.jsx` 📄
+Un élément de la liste des difficultés, représenté visuellement avec différents styles en fonction de l'état :
+- **Survolé** : Change la couleur de fond lorsque l'utilisateur survole l'élément.
+- **Sélectionné** : Affiche visuellement la difficulté actuellement sélectionnée.
+- Utilise le **hook `useState`** pour gérer l'état de survol (`isHovered`).
 
-### `npm run build`
+### 4. `DisplayDifficulty.jsx` 📊
+Affiche la difficulté actuellement sélectionnée.
+- Si aucune difficulté n'est sélectionnée, affiche "No difficulty set".
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation et Lancement 🚀
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Suivez ces étapes pour cloner le projet et l'exécuter en local :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clonez le dépôt :
+   ```bash
+   git clone <URL_DU_REPO>
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+root
+│
+├── src
+│   ├── components
+│   │   ├── DisplayDifficulty
+│   │   │   ├── DisplayDifficulty.jsx
+│   │   │   └── style.module.css
+│   │   ├── MenuList
+│   │   │   ├── MenuList.jsx
+│   │   │   ├── constant.js
+│   │   │   └── style.module.css
+│   │   └── MenuListItem
+│   │       ├── MenuListItem.jsx
+│   │       └── style.module.css
+│   ├── App.jsx
+│   └── style.module.css
+├── package.json
+└── README.md
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ce fichier `README.md` contient toutes les informations nécessaires pour comprendre, installer, et contribuer à votre projet. Vous pouvez l'adapter davantage selon vos besoins spécifiques ou ajouter d'autres sections pertinentes. 😊

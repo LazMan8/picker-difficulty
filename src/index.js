@@ -1,17 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// Importation de la bibliothèque React
+import React from "react";
+// Importation de la bibliothèque ReactDOM, qui est utilisée pour manipuler le DOM et intégrer le composant React dans la page HTML
+import ReactDOM from "react-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// Importation du composant principal de l'application nommé "App"
+import App from "./App";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Sélection de l'élément HTML avec l'ID "root", qui servira de point d'ancrage pour l'application React
+const divRoot = document.getElementById("root");
+
+// Création de la racine React dans l'élément HTML sélectionné, permettant ainsi de gérer l'arborescence de composants React
+const reactDom = ReactDOM.createRoot(divRoot);
+
+// Rendu du composant "App" dans la racine définie précédemment
+reactDom.render(<App></App>);
+
+// Note : <App></App> est l'instance de notre composant "App". Cela permet à React de l'afficher dans la page web.

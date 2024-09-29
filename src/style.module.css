@@ -1,0 +1,10 @@
+.workspace
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.titre
+{
+    text-align: center;
+}
